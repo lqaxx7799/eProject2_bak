@@ -64,7 +64,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Th&#xe1;ng"/>
+        <Property name="text" type="java.lang.String" value="Month"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtMonth">
@@ -73,12 +73,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="N&#x103;m"/>
+        <Property name="text" type="java.lang.String" value="Year"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCheckSalary">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Xem l&#x1b0;&#x1a1;ng"/>
+        <Property name="text" type="java.lang.String" value="View Salary"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="pnlSalaryReport">
@@ -88,10 +88,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lblActualTimekeeping" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -101,31 +101,24 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="lblTime" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                  <Component id="lblActualSalary" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblStandardSalary" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblMinuteLate" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                          <Component id="lblActualSalary" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="lblMinuteLate" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblStandardSalary" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
               </Group>
@@ -138,7 +131,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTime" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -174,17 +167,17 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Th&#x1edd;i gian:"/>
+            <Property name="text" type="java.lang.String" value="Time:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xf4;ng chu&#x1ea9;n:"/>
+            <Property name="text" type="java.lang.String" value="Standard Timekeeping:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xf4;ng ch&#x1ea5;m:"/>
+            <Property name="text" type="java.lang.String" value="Actual Timekeeping:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblStandardTimekeeping">
@@ -204,12 +197,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng chu&#x1ea9;n:"/>
+            <Property name="text" type="java.lang.String" value="Standard Salary:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
-            <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng th&#x1ef1;c t&#x1ebf;:"/>
+            <Property name="text" type="java.lang.String" value="Actual Salary:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblStandardSalary">
@@ -224,7 +217,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ph&#xfa;t &#x111;i mu&#x1ed9;n:"/>
+            <Property name="text" type="java.lang.String" value="Minutes Late:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblMinuteLate">
@@ -253,11 +246,11 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
-                <Column editable="false" title="Ng&#xe0;y" type="java.lang.String"/>
-                <Column editable="false" title="Th&#x1edd;i gian &#x111;&#x1ebf;n" type="java.lang.String"/>
-                <Column editable="false" title="Th&#x1edd;i gian v&#x1ec1;" type="java.lang.String"/>
-                <Column editable="false" title="&#x110;&#x1ebf;n mu&#x1ed9;n" type="java.lang.String"/>
-                <Column editable="false" title="V&#x1ec1; s&#x1edb;m" type="java.lang.String"/>
+                <Column editable="false" title="Date" type="java.lang.String"/>
+                <Column editable="false" title="In Time" type="java.lang.String"/>
+                <Column editable="false" title="Out Time" type="java.lang.String"/>
+                <Column editable="false" title="Come Late" type="java.lang.String"/>
+                <Column editable="false" title="Leave Early" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

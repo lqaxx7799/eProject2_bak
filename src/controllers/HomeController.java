@@ -79,39 +79,39 @@ public class HomeController {
         //4 - owner
         switch (App.currentAccount.getRoleId()) {
             case 1: {
-                homeView.getTabHome().addTab("Chấm công", timekeepingController.getPanel());
-                homeView.getTabHome().addTab("Thay đổi mật khẩu", changePasswordController.getPanel());
-                homeView.getTabHome().addTab("Nhập Nguyên Liệu", ingredientImportController.getPanel());
-                homeView.getTabHome().addTab("Danh Sách Món Chờ", awaitedDishListChefController.getPanel());
-                homeView.getTabHome().addTab("Xem lương", salaryReportController.getPanel());
-                homeView.getTabHome().addTab("Thông tin cá nhân", accountSettingController.getPanel());
-                homeView.getTabHome().addTab("Đăng xuất", logOutController.getPanel());
+                homeView.getTabHome().addTab("Timekeeping", timekeepingController.getPanel());
+                homeView.getTabHome().addTab("Change Password", changePasswordController.getPanel());
+                homeView.getTabHome().addTab("Import Ingredient", ingredientImportController.getPanel());
+                homeView.getTabHome().addTab("Waiting Orders", awaitedDishListChefController.getPanel());
+                homeView.getTabHome().addTab("Salary", salaryReportController.getPanel());
+                homeView.getTabHome().addTab("Account Setting", accountSettingController.getPanel());
+                homeView.getTabHome().addTab("Log Out", logOutController.getPanel());
                 break;
             }
             case 2: {
-                homeView.getTabHome().addTab("Gọi món", orderController.getPanel());
-                homeView.getTabHome().addTab("Chấm công", timekeepingController.getPanel());
-                homeView.getTabHome().addTab("Thay đổi mật khẩu", changePasswordController.getPanel());
-                homeView.getTabHome().addTab("Xem lương", salaryReportController.getPanel());
-                homeView.getTabHome().addTab("Thông tin cá nhân", accountSettingController.getPanel());
-                homeView.getTabHome().addTab("Đăng xuất", logOutController.getPanel());
+                homeView.getTabHome().addTab("Cashier", orderController.getPanel());
+                homeView.getTabHome().addTab("Timekeeping", timekeepingController.getPanel());
+                homeView.getTabHome().addTab("Change Password", changePasswordController.getPanel());
+                homeView.getTabHome().addTab("Salary", salaryReportController.getPanel());
+                homeView.getTabHome().addTab("Account Setting", accountSettingController.getPanel());
+                homeView.getTabHome().addTab("Log Out", logOutController.getPanel());
                 break;
             }
             case 3: {
-                homeView.getTabHome().addTab("Danh Sách Món Chờ", awaitedDishListWaiterController.getPanel());
-                homeView.getTabHome().addTab("Chấm công", timekeepingController.getPanel());
-                homeView.getTabHome().addTab("Thay đổi mật khẩu", changePasswordController.getPanel());
-                homeView.getTabHome().addTab("Xem lương", salaryReportController.getPanel());
-                homeView.getTabHome().addTab("Thông tin cá nhân", accountSettingController.getPanel());
-                homeView.getTabHome().addTab("Đăng xuất", logOutController.getPanel());
+                homeView.getTabHome().addTab("Waiting Orders", awaitedDishListWaiterController.getPanel());
+                homeView.getTabHome().addTab("Timekeeping", timekeepingController.getPanel());
+                homeView.getTabHome().addTab("Change Password", changePasswordController.getPanel());
+                homeView.getTabHome().addTab("Salary", salaryReportController.getPanel());
+                homeView.getTabHome().addTab("Account Setting", accountSettingController.getPanel());
+                homeView.getTabHome().addTab("Log Out", logOutController.getPanel());
                 break;
             }
             case 4: {
-                homeView.getTabHome().addTab("Quản lý", managementController.getPanel());
-                homeView.getTabHome().addTab("Thống kê", statisticController.getPanel());
-                homeView.getTabHome().addTab("Thay đổi mật khẩu", changePasswordController.getPanel());
-                homeView.getTabHome().addTab("Thông tin cá nhân", accountSettingController.getPanel());
-                homeView.getTabHome().addTab("Đăng xuất", logOutController.getPanel());
+                homeView.getTabHome().addTab("Management", managementController.getPanel());
+                homeView.getTabHome().addTab("Statistics", statisticController.getPanel());
+                homeView.getTabHome().addTab("Change Password", changePasswordController.getPanel());
+                homeView.getTabHome().addTab("Account Setting", accountSettingController.getPanel());
+                homeView.getTabHome().addTab("Log Out", logOutController.getPanel());
                 break;
             }
             default: {

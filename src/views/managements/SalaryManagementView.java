@@ -95,7 +95,7 @@ public class SalaryManagementView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Lương cơ bản", "Từ ngày", "Đến ngày"
+                "Standard Salary", "From Date", "To Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -108,9 +108,9 @@ public class SalaryManagementView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblSalary);
 
-        lblEditSalary.setText("Điều chỉnh lương:");
+        lblEditSalary.setText("Adjust Salary");
 
-        btnUpdate.setText("Cập nhật");
+        btnUpdate.setText("Adjust");
 
         lblErrSalary.setForeground(new java.awt.Color(255, 0, 0));
         lblErrSalary.setText("jLabel1");

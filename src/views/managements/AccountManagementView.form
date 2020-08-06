@@ -18,7 +18,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="290" max="32767" attributes="0"/>
+              <EmptySpace pref="309" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnCancel" min="-2" pref="83" max="-2" attributes="0"/>
                   <Component id="btnSubmit" min="-2" pref="83" max="-2" attributes="0"/>
@@ -81,13 +81,13 @@
               <Table columnCount="9" rowCount="0">
                 <Column editable="false" title="Id" type="java.lang.Integer"/>
                 <Column editable="false" title="Email" type="java.lang.String"/>
-                <Column editable="false" title="T&#xea;n" type="java.lang.String"/>
-                <Column editable="false" title="&#x110;&#x1ecb;a ch&#x1ec9;" type="java.lang.String"/>
-                <Column editable="false" title="Gi&#x1edb;i t&#xed;nh" type="java.lang.String"/>
-                <Column editable="false" title="Ng&#xe0;y sinh" type="java.lang.String"/>
-                <Column editable="false" title="Ch&#x1ee9;c v&#x1ee5;" type="java.lang.String"/>
-                <Column editable="false" title="Ng&#xe0;y l&#xe0;m vi&#x1ec7;c" type="java.lang.String"/>
-                <Column editable="false" title="&#x110;ang l&#xe0;m vi&#x1ec7;c" type="java.lang.Boolean"/>
+                <Column editable="false" title="User Name" type="java.lang.String"/>
+                <Column editable="false" title="Address" type="java.lang.String"/>
+                <Column editable="false" title="Gender" type="java.lang.String"/>
+                <Column editable="false" title="Date Of Birth" type="java.lang.String"/>
+                <Column editable="false" title="Role" type="java.lang.String"/>
+                <Column editable="false" title="Start Work Date" type="java.lang.String"/>
+                <Column editable="false" title="Is Wokring" type="java.lang.Boolean"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -148,17 +148,17 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnAddNew">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Th&#xea;m m&#x1edb;i"/>
+        <Property name="text" type="java.lang.String" value="Add New"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEdit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
+        <Property name="text" type="java.lang.String" value="Edit"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="H&#x1ee7;y"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">
@@ -168,7 +168,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnViewSalary">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Xem l&#x1b0;&#x1a1;ng"/>
+        <Property name="text" type="java.lang.String" value="View Salary"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
@@ -307,31 +307,31 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblUserName">
           <Properties>
-            <Property name="text" type="java.lang.String" value="T&#xea;n ng&#x1b0;&#x1edd;i d&#xf9;ng"/>
+            <Property name="text" type="java.lang.String" value="User Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAddress">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
+            <Property name="text" type="java.lang.String" value="Address"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAddress">
         </Component>
         <Component class="javax.swing.JLabel" name="lblGender">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
+            <Property name="text" type="java.lang.String" value="Gender"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDateOfBirth">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
+            <Property name="text" type="java.lang.String" value="Date Of Birth"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDateOfBirth">
         </Component>
         <Component class="javax.swing.JLabel" name="lblRole">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ch&#x1ee9;c v&#x1ee5;"/>
+            <Property name="text" type="java.lang.String" value="Role"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxRole">
@@ -418,7 +418,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblIsWorking">
           <Properties>
-            <Property name="text" type="java.lang.String" value="&#x110;ang l&#xe0;m vi&#xea;c"/>
+            <Property name="text" type="java.lang.String" value="Is Working"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblErrIsWorking">

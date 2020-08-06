@@ -41,7 +41,7 @@ public class LogOutView extends javax.swing.JPanel {
 
         btnLogOut = new javax.swing.JButton();
 
-        btnLogOut.setText("Đăng xuất");
+        btnLogOut.setText("Log Out");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -50,7 +50,7 @@ public class LogOutView extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
                 .addComponent(btnLogOut)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

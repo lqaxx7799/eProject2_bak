@@ -91,9 +91,9 @@ public class LogInView extends javax.swing.JPanel {
 
         lblEmail.setText("Email:");
 
-        lblPassword.setText("Mật khẩu:");
+        lblPassword.setText("Password:");
 
-        btnLogIn.setText("Đăng nhập");
+        btnLogIn.setText("Log In");
 
         lblMessage.setForeground(new java.awt.Color(255, 0, 0));
         lblMessage.setText("label");

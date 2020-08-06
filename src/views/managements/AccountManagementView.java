@@ -307,7 +307,7 @@ public class AccountManagementView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Id", "Email", "Tên", "Địa chỉ", "Giới tính", "Ngày sinh", "Chức vụ", "Ngày làm việc", "Đang làm việc"
+                "Id", "Email", "User Name", "Address", "Gender", "Date Of Birth", "Role", "Start Work Date", "Is Wokring"
             }
         ) {
             Class[] types = new Class [] {
@@ -327,25 +327,25 @@ public class AccountManagementView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblAccount);
 
-        btnAddNew.setText("Thêm mới");
+        btnAddNew.setText("Add New");
 
-        btnEdit.setText("Sửa");
+        btnEdit.setText("Edit");
 
-        btnCancel.setText("Hủy");
+        btnCancel.setText("Cancel");
 
         btnSubmit.setText("OK");
 
-        btnViewSalary.setText("Xem lương");
+        btnViewSalary.setText("View Salary");
 
-        lblUserName.setText("Tên người dùng");
+        lblUserName.setText("User Name");
 
-        lblAddress.setText("Địa chỉ");
+        lblAddress.setText("Address");
 
-        lblGender.setText("Giới tính");
+        lblGender.setText("Gender");
 
-        lblDateOfBirth.setText("Ngày sinh");
+        lblDateOfBirth.setText("Date Of Birth");
 
-        lblRole.setText("Chức vụ");
+        lblRole.setText("Role");
 
         cbxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -369,7 +369,7 @@ public class AccountManagementView extends javax.swing.JPanel {
 
         lblEmail.setText("Email");
 
-        lblIsWorking.setText("Đang làm viêc");
+        lblIsWorking.setText("Is Working");
 
         lblErrIsWorking.setForeground(new java.awt.Color(255, 0, 0));
         lblErrIsWorking.setText("jLabel7");
@@ -478,7 +478,7 @@ public class AccountManagementView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))

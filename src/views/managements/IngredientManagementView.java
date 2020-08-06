@@ -206,7 +206,7 @@ public class IngredientManagementView extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "ID ", "Tên Nguyên Liệu", "Đơn vị", "Có sẵn"
+                "ID ", "Ingredient Name", "Unit", "Is Available"
             }
         ) {
             Class[] types = new Class [] {
@@ -226,30 +226,30 @@ public class IngredientManagementView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(IngredientManagementTable);
 
-        addIngredientButton.setText("Thêm Mới");
+        addIngredientButton.setText("Add New");
         addIngredientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addIngredientButtonActionPerformed(evt);
             }
         });
 
-        updateIngredientButton.setText("Sửa ");
+        updateIngredientButton.setText("Edit");
 
-        removeIngredientButton.setText("Xóa ");
+        removeIngredientButton.setText("Delete");
 
         messageLable.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel1.setText("Tên Nguyên Liệu");
+        jLabel1.setText("Ingredient Name");
 
         ingredientNameTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jLabel2.setText("Đơn vị");
+        jLabel2.setText("Unit");
 
-        cancelButton.setText("HỦY");
+        cancelButton.setText("CANCEL");
 
-        doneButton.setText("XONG");
+        doneButton.setText("SUBMIT");
 
-        jLabel3.setText("Có sẵn");
+        jLabel3.setText("Is Available");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -283,7 +283,7 @@ public class IngredientManagementView extends javax.swing.JPanel {
                     .addComponent(updateIngredientButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addIngredientButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(doneButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -80,14 +80,14 @@ public class AwaitedDishListWaiterView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         AwaitedDishLstWaiterTable = new javax.swing.JTable();
 
-        BtnWatierUpdate.setText("Làm mới");
+        BtnWatierUpdate.setText("Refresh");
         BtnWatierUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnWatierUpdateActionPerformed(evt);
             }
         });
 
-        BtnWatierDone.setText("Xong");
+        BtnWatierDone.setText("Done");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,9 +95,9 @@ public class AwaitedDishListWaiterView extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnWatierUpdate)
-                    .addComponent(BtnWatierDone, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnWatierDone, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                    .addComponent(BtnWatierUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(59, 59, 59))
         );
         jPanel1Layout.setVerticalGroup(
@@ -132,7 +132,7 @@ public class AwaitedDishListWaiterView extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tên Món", "Danh Mục Món", "Số lượng", "Bàn", "Thời gian"
+                "ID", "Item Name", "Category Name", "Quantity", "Table", "Time"
             }
         ) {
             Class[] types = new Class [] {

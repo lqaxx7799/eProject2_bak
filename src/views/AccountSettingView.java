@@ -201,15 +201,15 @@ public class AccountSettingView extends javax.swing.JPanel {
 
         lblEmail.setText("jLabel2");
 
-        jLabel3.setText("Tên:");
+        jLabel3.setText("User Name:");
 
-        jLabel4.setText("Địa chỉ:");
+        jLabel4.setText("Address:");
 
-        jLabel5.setText("Giới tính:");
+        jLabel5.setText("Gender:");
 
-        jLabel6.setText("Ngày sinh:");
+        jLabel6.setText("Date Of Birth:");
 
-        jLabel7.setText("Ngày bắt đầu:");
+        jLabel7.setText("Started Work Date:");
 
         txtUserName.setText("jTextField1");
 
@@ -233,7 +233,7 @@ public class AccountSettingView extends javax.swing.JPanel {
         lblErrDateOfBirth.setForeground(new java.awt.Color(255, 0, 0));
         lblErrDateOfBirth.setText("jLabel9");
 
-        btnUpdate.setText("Cập nhật");
+        btnUpdate.setText("Update");
 
         lblSuccess.setForeground(new java.awt.Color(0, 153, 0));
         lblSuccess.setText("jLabel2");
@@ -252,29 +252,29 @@ public class AccountSettingView extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblEmail)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtUserName)
-                                    .addComponent(txtAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                                    .addComponent(txtDateOfBirth, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                                    .addComponent(cbxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(77, 77, 77)
+                                .addGap(231, 231, 231)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblErrDateOfBirth)
                                     .addComponent(lblErrGender)
                                     .addComponent(lblErrAddress)
-                                    .addComponent(lblErrUserName)))))
+                                    .addComponent(lblErrUserName)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(lblEmail))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnUpdate)
                             .addComponent(lblStartWorkingDate)
-                            .addComponent(lblSuccess))))
-                .addContainerGap(238, Short.MAX_VALUE))
+                            .addComponent(lblSuccess)
+                            .addComponent(txtDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxGender, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

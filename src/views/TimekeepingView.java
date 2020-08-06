@@ -95,11 +95,11 @@ public class TimekeepingView extends javax.swing.JPanel {
         lblDate = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
 
-        btnCreateTimekeeping.setText("Chấm công");
+        btnCreateTimekeeping.setText("Submit Timekeeping");
 
-        jLabel1.setText("Công đến:");
+        jLabel1.setText("In Time:");
 
-        jLabel2.setText("Công về:");
+        jLabel2.setText("Out Time:");
 
         lblInTime.setText("jLabel3");
 
@@ -133,9 +133,9 @@ public class TimekeepingView extends javax.swing.JPanel {
                                 .addComponent(lblTime)
                                 .addComponent(lblDate))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addGap(136, 136, 136)
                         .addComponent(btnCreateTimekeeping)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,9 +152,9 @@ public class TimekeepingView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lblOutTime))
-                .addGap(50, 50, 50)
+                .addGap(51, 51, 51)
                 .addComponent(btnCreateTimekeeping)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -201,11 +201,11 @@ public class OrderView extends javax.swing.JPanel {
 
         cbMenuItem.setModel(cbMenuItem.getModel());
 
-        btnAdd.setText("Thêm món");
+        btnAdd.setText("Add Item");
 
         txtQuantity.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel2.setText("Số lượng:");
+        jLabel2.setText("Quantity:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -246,7 +246,7 @@ public class OrderView extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnPay.setText("Thanh toán");
+        btnPay.setText("Check Out");
         btnPay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPayActionPerformed(evt);
@@ -265,7 +265,7 @@ public class OrderView extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Tên món", "Số lượng", "Đơn giá", "Thành tiền"
+                "Item Name", "Quantity", "Unit Price", "Total Price"
             }
         ) {
             Class[] types = new Class [] {
@@ -285,11 +285,11 @@ public class OrderView extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel1.setText("Bàn hiện tại:");
+        jLabel1.setText("Current Table:");
 
-        jLabel3.setText("Hóa đơn:");
+        jLabel3.setText("Receipt:");
 
-        btnAddReceipt.setText("Thêm hóa đơn");
+        btnAddReceipt.setText("Add Receipt");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

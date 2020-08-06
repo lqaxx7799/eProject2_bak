@@ -167,7 +167,7 @@ public class TableManagementView extends javax.swing.JPanel {
                 {null, null,  new Boolean(false), null}
             },
             new String [] {
-                "ID Bàn", "Tên Bàn", "Có Người Ngồi", "Có sẵn"
+                "ID", "Table Name", "Is Seated", "Is Available"
             }
         ) {
             Class[] types = new Class [] {
@@ -187,21 +187,21 @@ public class TableManagementView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableManagementTable);
 
-        addTableButton.setText("Thêm");
+        addTableButton.setText("Add New");
 
-        editTableButton.setText("Sửa");
+        editTableButton.setText("Edit");
 
-        removeTableButton.setText("Xóa");
+        removeTableButton.setText("Delete");
 
-        cancelButton.setText("Hủy");
+        cancelButton.setText("Cancel");
 
         doneButton.setText("Ok");
 
-        jLabel1.setText("Tên Bàn");
+        jLabel1.setText("Table Name:");
 
-        jLabel2.setText("Có Người Ngồi");
+        jLabel2.setText("Is Seated:");
 
-        jLabel3.setText("Có sẵn");
+        jLabel3.setText("Is Available:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

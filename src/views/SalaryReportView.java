@@ -226,17 +226,17 @@ public class SalaryReportView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTimekeeping = new javax.swing.JTable();
 
-        jLabel1.setText("Tháng");
+        jLabel1.setText("Month");
 
-        jLabel2.setText("Năm");
+        jLabel2.setText("Year");
 
-        btnCheckSalary.setText("Xem lương");
+        btnCheckSalary.setText("View Salary");
 
-        jLabel3.setText("Thời gian:");
+        jLabel3.setText("Time:");
 
-        jLabel4.setText("Công chuẩn:");
+        jLabel4.setText("Standard Timekeeping:");
 
-        jLabel5.setText("Công chấm:");
+        jLabel5.setText("Actual Timekeeping:");
 
         lblStandardTimekeeping.setText("jLabel6");
 
@@ -244,15 +244,15 @@ public class SalaryReportView extends javax.swing.JPanel {
 
         lblTime.setText("jLabel8");
 
-        jLabel9.setText("Lương chuẩn:");
+        jLabel9.setText("Standard Salary:");
 
-        jLabel10.setText("Lương thực tế:");
+        jLabel10.setText("Actual Salary:");
 
         lblStandardSalary.setText("jLabel6");
 
         lblActualSalary.setText("jLabel7");
 
-        jLabel11.setText("Phút đi muộn:");
+        jLabel11.setText("Minutes Late:");
 
         lblMinuteLate.setText("jLabel6");
 
@@ -262,10 +262,10 @@ public class SalaryReportView extends javax.swing.JPanel {
             pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSalaryReportLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlSalaryReportLayout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(lblActualTimekeeping))
                     .addGroup(pnlSalaryReportLayout.createSequentialGroup()
                         .addComponent(jLabel4)
@@ -273,24 +273,20 @@ public class SalaryReportView extends javax.swing.JPanel {
                         .addComponent(lblStandardTimekeeping))
                     .addGroup(pnlSalaryReportLayout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblTime)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMinuteLate)
                     .addGroup(pnlSalaryReportLayout.createSequentialGroup()
-                        .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlSalaryReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlSalaryReportLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(lblActualSalary))
-                            .addComponent(lblStandardSalary)))
-                    .addGroup(pnlSalaryReportLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblMinuteLate)))
+                        .addGap(1, 1, 1)
+                        .addComponent(lblActualSalary))
+                    .addComponent(lblStandardSalary))
                 .addGap(137, 137, 137))
         );
         pnlSalaryReportLayout.setVerticalGroup(
@@ -331,7 +327,7 @@ public class SalaryReportView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Ngày", "Thời gian đến", "Thời gian về", "Đến muộn", "Về sớm"
+                "Date", "In Time", "Out Time", "Come Late", "Leave Early"
             }
         ) {
             Class[] types = new Class [] {

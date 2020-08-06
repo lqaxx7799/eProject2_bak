@@ -128,11 +128,11 @@ public class IngredientImportView extends javax.swing.JPanel {
         lblCost = new javax.swing.JLabel();
         txtCost = new javax.swing.JTextField();
 
-        jLabel1.setText("Chọn nguyên liệu");
+        jLabel1.setText("Select Ingredient");
 
-        nhapnlButton.setText("Nhập nguyên liệu");
+        nhapnlButton.setText("Import");
 
-        jLabel2.setText("Chọn số lượng");
+        jLabel2.setText("Quantity");
 
         TxtAmount.setText("0");
         TxtAmount.setToolTipText("");
@@ -142,7 +142,7 @@ public class IngredientImportView extends javax.swing.JPanel {
             }
         });
 
-        LabelUnit.setText("Đơn vị:");
+        LabelUnit.setText("Unit:");
 
         cbIngredientList.setModel(cbIngredientList.getModel());
         cbIngredientList.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +151,7 @@ public class IngredientImportView extends javax.swing.JPanel {
             }
         });
 
-        lblCost.setText("Thành Tiền ");
+        lblCost.setText("Total Cost:");
 
         txtCost.setText("0");
         txtCost.addActionListener(new java.awt.event.ActionListener() {
@@ -171,20 +171,21 @@ public class IngredientImportView extends javax.swing.JPanel {
                         .addComponent(cbIngredientList, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(177, 177, 177)
                         .addComponent(nhapnlButton))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(29, 29, 29)
-                        .addComponent(TxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(LabelUnit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblCost)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCost)
+                            .addComponent(jLabel2))
                         .addGap(42, 42, 42)
-                        .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(371, 371, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(TxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelUnit))
+                            .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(439, 439, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(txtMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,8 +204,10 @@ public class IngredientImportView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TxtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelUnit)
-                    .addComponent(lblUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(LabelUnit)))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCost)

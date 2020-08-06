@@ -101,15 +101,15 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
-                <Column editable="false" title="ID Ba&#x300;n" type="java.lang.Integer"/>
-                <Column editable="false" title="T&#xea;n Ba&#x300;n" type="java.lang.String"/>
-                <Column editable="false" title="Co&#x301; Ng&#x1b0;&#x1a1;&#x300;i Ng&#xf4;&#x300;i" type="java.lang.Boolean">
+                <Column editable="false" title="ID" type="java.lang.Integer"/>
+                <Column editable="false" title="Table Name" type="java.lang.String"/>
+                <Column editable="false" title="Is Seated" type="java.lang.Boolean">
                   <Data value="false"/>
                   <Data value="false"/>
                   <Data value="false"/>
                   <Data value="false"/>
                 </Column>
-                <Column editable="false" title="Co&#x301; s&#x103;&#x303;n" type="java.lang.Boolean"/>
+                <Column editable="false" title="Is Available" type="java.lang.Boolean"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -145,22 +145,22 @@
     </Container>
     <Component class="javax.swing.JButton" name="addTableButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+        <Property name="text" type="java.lang.String" value="Add New"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="editTableButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="S&#x1b0;&#x309;a"/>
+        <Property name="text" type="java.lang.String" value="Edit"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="removeTableButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Xo&#x301;a"/>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="cancelButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Hu&#x309;y"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="doneButton">
@@ -170,12 +170,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="T&#xea;n Ba&#x300;n"/>
+        <Property name="text" type="java.lang.String" value="Table Name:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Co&#x301; Ng&#x1b0;&#x1a1;&#x300;i Ng&#xf4;&#x300;i"/>
+        <Property name="text" type="java.lang.String" value="Is Seated:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tableNameTextField">
@@ -184,7 +184,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Co&#x301; s&#x103;&#x303;n"/>
+        <Property name="text" type="java.lang.String" value="Is Available:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="isAvailableRadioButton">

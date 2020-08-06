@@ -133,11 +133,11 @@ public class ChangePasswordView extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         lblSuccess = new javax.swing.JLabel();
 
-        lblOldPassword.setText("Mật khẩu cũ:");
+        lblOldPassword.setText("Old Password:");
 
-        lblNewPassword.setText("Mật khẩu mới:");
+        lblNewPassword.setText("New Password:");
 
-        lblReenterNewPassword.setText("Nhập lại mật khẩu mới: ");
+        lblReenterNewPassword.setText("Reenter New Password:");
 
         lblErrOldPassword.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -145,7 +145,7 @@ public class ChangePasswordView extends javax.swing.JPanel {
 
         lblErrReenterNewPassword.setForeground(new java.awt.Color(255, 0, 0));
 
-        btnSubmit.setText("Xác nhận");
+        btnSubmit.setText("Confirm");
 
         lblSuccess.setForeground(new java.awt.Color(0, 153, 0));
 

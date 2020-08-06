@@ -154,7 +154,7 @@ public class MenuCategoryManagementView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setText("Tên danh mục:");
+        jLabel1.setText("Category Name:");
 
         txtCategoryName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,25 +162,25 @@ public class MenuCategoryManagementView extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setText("Thêm");
+        btnAdd.setText("Add New");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnFix.setText("Sửa");
+        btnFix.setText("Edit");
 
-        btnRemove.setText("Xóa");
+        btnRemove.setText("Delete");
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveActionPerformed(evt);
             }
         });
 
-        btnOK.setText("Xác nhận");
+        btnOK.setText("Submit");
 
-        btnCancel.setText("Hủy");
+        btnCancel.setText("Cancel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

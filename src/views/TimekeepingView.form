@@ -40,11 +40,11 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                       <Component id="btnCreateTimekeeping" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="162" max="32767" attributes="0"/>
+              <EmptySpace pref="137" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,9 +65,9 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblOutTime" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Component id="btnCreateTimekeeping" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="71" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,17 +75,17 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnCreateTimekeeping">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ch&#x1ea5;m c&#xf4;ng"/>
+        <Property name="text" type="java.lang.String" value="Submit Timekeeping"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xf4;ng &#x111;&#x1ebf;n:"/>
+        <Property name="text" type="java.lang.String" value="In Time:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xf4;ng v&#x1ec1;:"/>
+        <Property name="text" type="java.lang.String" value="Out Time:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblInTime">

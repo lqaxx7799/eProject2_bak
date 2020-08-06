@@ -68,9 +68,9 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="0">
-                <Column editable="false" title="L&#x1b0;&#x1a1;ng c&#x1a1; b&#x1ea3;n" type="java.lang.Object"/>
-                <Column editable="false" title="T&#x1eeb; ng&#xe0;y" type="java.lang.Object"/>
-                <Column editable="false" title="&#x110;&#x1ebf;n ng&#xe0;y" type="java.lang.Object"/>
+                <Column editable="false" title="Standard Salary" type="java.lang.Object"/>
+                <Column editable="false" title="From Date" type="java.lang.Object"/>
+                <Column editable="false" title="To Date" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -101,14 +101,14 @@
     </Container>
     <Component class="javax.swing.JLabel" name="lblEditSalary">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec1;u ch&#x1ec9;nh l&#x1b0;&#x1a1;ng:"/>
+        <Property name="text" type="java.lang.String" value="Adjust Salary"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSalary">
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
+        <Property name="text" type="java.lang.String" value="Adjust"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblErrSalary">
