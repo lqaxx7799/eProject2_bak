@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/eProject2_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/eProject2_db?useUnicode=true&characterEncoding=utf-8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
