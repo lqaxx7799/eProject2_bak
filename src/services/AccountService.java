@@ -50,6 +50,36 @@ public class AccountService {
             return new ArrayList<>();
         }
     }
+    
+    public ArrayList<Account> getWorkingAccounts() {
+        try {
+            Connection connection = ConnectionFactory.getConnection();
+            Statement stmt = connection.createStatement();
+            String query = "select * from accounts where is_working = 1";
+            ResultSet rs = stmt.executeQuery(query);
+            ArrayList<Account> list = new ArrayList<>();
+            while (rs.next()) {
+                Account account = new Account();
+                account.setId(rs.getInt(1));
+                account.setEmail(rs.getString(2));
+                account.setPassword(rs.getString(3));
+                account.setUserName(rs.getString(4));
+                account.setAddress(rs.getString(5));
+                account.setGender(rs.getString(6));
+                account.setDateOfBirth(rs.getDate(7));
+                account.setRoleId(rs.getInt(8));
+                account.setStartWorkDate(rs.getDate(9));
+                account.setWorking(rs.getBoolean(10));
+                list.add(account);
+            }
+            stmt.close();
+            connection.close();
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
 
     public Account getById(int id) {
         try {

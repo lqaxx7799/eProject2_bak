@@ -28,6 +28,7 @@ public class ManagementController implements BaseController {
     private TableManagementController tableManagementController;
     private MenuItemManagementController menuItemManagementController;
     private MenuCategoryManagementController menuCategoryManagementController;
+    private MonthlySalaryManagementController monthlySalaryManagementController;
 
     public ManagementController() {
         managementView = new ManagementView();
@@ -36,12 +37,14 @@ public class ManagementController implements BaseController {
         tableManagementController = new TableManagementController();
         menuCategoryManagementController = new MenuCategoryManagementController();
         menuItemManagementController = new MenuItemManagementController();
+        monthlySalaryManagementController = new MonthlySalaryManagementController();
 
         managementView.getTabManagement().addTab("Account", accountManagementController.getPanel());
         managementView.getTabManagement().addTab("Ingredient", ingredientManagementController.getPanel());
         managementView.getTabManagement().addTab("Table", tableManagementController.getPanel());
         managementView.getTabManagement().addTab("Menu Item", menuItemManagementController.getPanel());
         managementView.getTabManagement().addTab("Menu Category", menuCategoryManagementController.getPanel());
+        managementView.getTabManagement().addTab("Salary", monthlySalaryManagementController.getPanel());
 
         managementView.getTabManagement().addChangeListener(e -> changeTab(e));
     }
@@ -74,6 +77,9 @@ public class ManagementController implements BaseController {
                 break;
             case 4:
                 menuCategoryManagementController.loadData();
+                break;
+            case 5:
+                monthlySalaryManagementController.loadData();
                 break;
             default:
                 break;

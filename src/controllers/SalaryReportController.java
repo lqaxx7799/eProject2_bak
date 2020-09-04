@@ -67,17 +67,17 @@ public class SalaryReportController implements BaseController {
 
         boolean isValid = true;
         if (yearString.equals("")) {
-            salaryReportView.getLblErrMessage().setText("Phải nhập năm");
+            salaryReportView.getLblErrMessage().setText("Year is required");
             isValid = false;
         } else if (!CommonUltilities.checkIntegerNumberFormat(yearString)) {
-            salaryReportView.getLblErrMessage().setText("Năm phải là số");
+            salaryReportView.getLblErrMessage().setText("Year must be a number");
             isValid = false;
         }
         if (monthString.equals("")) {
-            salaryReportView.getLblErrMessage().setText("Phải nhập tháng");
+            salaryReportView.getLblErrMessage().setText("Month is required");
             isValid = false;
         } else if (!CommonUltilities.checkIntegerNumberFormat(monthString)) {
-            salaryReportView.getLblErrMessage().setText("Tháng phải là số");
+            salaryReportView.getLblErrMessage().setText("Month must be a number");
             isValid = false;
         }
 
@@ -209,7 +209,7 @@ public class SalaryReportController implements BaseController {
 
         if (salaryInformation != null) {
             salaryReportView.getPnlSalaryReport().setVisible(true);
-            salaryReportView.getLblTime().setText("Tháng " + month + "/" + year);
+            salaryReportView.getLblTime().setText("Time: " + month + "/" + year);
             salaryReportView.getLblStandardTimekeeping().setText(String.valueOf(timeKeys.size()));
             salaryReportView.getLblActualTimekeeping().setText(String.valueOf(countActualTimekeeping));
             salaryReportView.getLblStandardSalary().setText(CommonUltilities.formatCurrency(salaryInformation.getSalary()));
