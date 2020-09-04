@@ -87,7 +87,7 @@ public class SalaryManagementController {
         boolean isValid = true;
 
         if (!CommonUltilities.checkDoubleNumberFormat(salaryString)) {
-            salaryManagementView.getLblErrSalary().setText("Nhập sai định dạng số");
+            salaryManagementView.getLblErrSalary().setText("Must be a number");
             isValid = false;
         }
 
@@ -108,7 +108,7 @@ public class SalaryManagementController {
             salaryInformation.setSalary(salary);
             salaryInformationService.insert(salaryInformation);
 
-            salaryManagementView.getLblErrSalary().setText("Cập nhật lương thành công");
+            salaryManagementView.getLblErrSalary().setText("Salary updated successfully");
             salaryManagementView.getLblErrSalary().setForeground(new Color(0, 153, 0));
 
             loadData();

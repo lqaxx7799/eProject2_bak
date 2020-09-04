@@ -64,7 +64,7 @@ public class MenuItemManagementController implements BaseController {
     public void btnFixHandler() {
         int selectedRow = menuItemManagementView.getTblMenuItem().getSelectedRow();
         if (selectedRow == - 1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
         int menuitemId = (int) menuItemManagementView.getTblMenuItem().getValueAt(selectedRow, 0);
@@ -80,18 +80,18 @@ public class MenuItemManagementController implements BaseController {
     }
 
     public void btnRemoveHandler() {
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa món này", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you really want to delete this item?", "Confirmation", JOptionPane.YES_NO_OPTION);
         if (dialogResult == JOptionPane.YES_OPTION) {
             int selectedRow = menuItemManagementView.getTblMenuItem().getSelectedRow();
             if (selectedRow == - 1) {
-                JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+                JOptionPane.showMessageDialog(null, "Select a row first");
                 return;
             }
             int menuitemId = (int) menuItemManagementView.getTblMenuItem().getValueAt(selectedRow, 0);
             MenuItem menuItem = menuItemService.getById(menuitemId);
             menuItem.setAvailable(false);
             menuItemService.update(menuItem);
-            JOptionPane.showMessageDialog(null, "Xóa thành công");
+            JOptionPane.showMessageDialog(null, "Success");
             loadTable();
         }
     }
@@ -111,13 +111,13 @@ public class MenuItemManagementController implements BaseController {
         String itemName = menuItemManagementView.getTxtItemName().getText();
         boolean check = true;
         if (itemName.equals("")) {
-            menuItemManagementView.getLblErrorName().setText("Chưa nhập tên");
+            menuItemManagementView.getLblErrorName().setText("Item name is required");
             check = false;
         } else if (actionName.equals("add")){
             ArrayList<MenuItem> menuItems = menuItemService.getAll();
             for (MenuItem item : menuItems) {
                 if (item.getItemName().equalsIgnoreCase(itemName) && item.isAvailable()) {
-                    menuItemManagementView.getLblErrorName().setText("Món đã tồn tại");
+                    menuItemManagementView.getLblErrorName().setText("Item name is already existed");
                     check = false;
                     break;
                 } else if (item.getItemName().equals(itemName) && item.isAvailable() == false) {
@@ -127,7 +127,7 @@ public class MenuItemManagementController implements BaseController {
                     item.setCreatedTime(new Date());
                     item.setMenuCategoryId(categoryId);
                     menuItemService.update(item);
-                    JOptionPane.showMessageDialog(null, "Thêm thành công");
+                    JOptionPane.showMessageDialog(null, "Success");
                     loadTable();
                     resetForm();
                     resetErrorLabel();
@@ -138,18 +138,18 @@ public class MenuItemManagementController implements BaseController {
             }
         }
         if (menuItemManagementView.getTxtPrice().getText().equals("")) {
-            menuItemManagementView.getLblErrorPrice().setText("Chưa nhập giá");
+            menuItemManagementView.getLblErrorPrice().setText("Price is required");
             check = false;
         } else if (menuItemManagementView.getTxtPrice().getText().matches(regex) == false && menuItemManagementView.getTxtPrice().getText().matches(regex1) == false) {
-            menuItemManagementView.getLblErrorPrice().setText("Chỉ đc nhập số");
+            menuItemManagementView.getLblErrorPrice().setText("Price must be a number");
             check = false;
         }
         int count = 0;
         if (menuItemManagementView.getTxtCategoryId().getText().equals("")) {
-            menuItemManagementView.getLblErrorCategoryId().setText("Chưa nhập id danh mục");
+            menuItemManagementView.getLblErrorCategoryId().setText("Category id is requried");
             check = false;
         } else if (menuItemManagementView.getTxtCategoryId().getText().matches(regex1) == false) {
-            menuItemManagementView.getLblErrorCategoryId().setText("Chỉ được nhập số");
+            menuItemManagementView.getLblErrorCategoryId().setText("Category id must be a number");
             check = false;
         } else {
             ArrayList<MenuCategory> menuCategorys = menuCategoryService.getAll();
@@ -160,7 +160,7 @@ public class MenuItemManagementController implements BaseController {
                 }
             }
             if (count == 0) {
-                menuItemManagementView.getLblErrorCategoryId().setText("Không tồn tại danh mục");
+                menuItemManagementView.getLblErrorCategoryId().setText("Category does not exist");
                 check = false;
             }
         }
@@ -174,7 +174,7 @@ public class MenuItemManagementController implements BaseController {
                 item.setMenuCategoryId(categoryId);
                 item.setCreatedTime(new Date());
                 menuItemService.insert(item);
-                JOptionPane.showMessageDialog(null, "Thêm thành công");
+                JOptionPane.showMessageDialog(null, "Success");
                 loadTable();
                 resetForm();
                 setButtonState(true);
@@ -186,7 +186,7 @@ public class MenuItemManagementController implements BaseController {
                 item.setPrice(price);
                 item.setMenuCategoryId(categoryId);
                 menuItemService.update(item);
-                JOptionPane.showMessageDialog(null, "Sửa thành công");
+                JOptionPane.showMessageDialog(null, "Success");
                 loadTable();
                 resetForm();
                 setButtonState(true);

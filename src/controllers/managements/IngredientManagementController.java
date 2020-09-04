@@ -77,18 +77,18 @@ public class IngredientManagementController implements BaseController {
         DefaultTableModel listModel = (DefaultTableModel) ingredientManagementView.getIngredientManagementTable().getModel();
         int rowSelected = ingredientManagementView.getIngredientManagementTable().getSelectedRow();
         if (rowSelected == -1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
 
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Xóa nguyên liệu này?", "Thông báo", dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Delete this ingredient?", "Confirmation", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             int id = (int) ingredientManagementView.getIngredientManagementTable().getValueAt(rowSelected, 0);
             Ingredient ingredient = ingredientService.getById(id);
             ingredient.setAvailable(false);
             ingredientService.update(ingredient);
-            JOptionPane.showMessageDialog(null, "Thành Công!");
+            JOptionPane.showMessageDialog(null, "Success!");
         }
         loadData();
     }
@@ -117,15 +117,15 @@ public class IngredientManagementController implements BaseController {
             String regex = "^[a-zA-Z]{1,}$";
 
             if (newName.equals("")) {
-                JOptionPane.showMessageDialog(null, "Chưa nhập tên nguyên liệu!");
+                JOptionPane.showMessageDialog(null, "Inredient name is required!");
                 return;
             }
 
             if (unit.equals("")) {
-                JOptionPane.showMessageDialog(null, "Chưa nhập đơn vị!");
+                JOptionPane.showMessageDialog(null, "Unit is requied!");
                 return;
             } else if (!unit.matches(regex)) {
-                JOptionPane.showMessageDialog(null, "Nhập đơn vị không đúng định dạng!");
+                JOptionPane.showMessageDialog(null, "Unit is incorrect!");
                 return;
             }
 
@@ -142,7 +142,7 @@ public class IngredientManagementController implements BaseController {
 
             ingredientService.update(item);
             
-            JOptionPane.showMessageDialog(null, "Thành Công");
+            JOptionPane.showMessageDialog(null, "Success");
             ingredientManagementView.getIngredientNameTextField().setText("");
             ingredientManagementView.getUnitTextField().setText("");
             setFormState(false);
@@ -158,13 +158,13 @@ public class IngredientManagementController implements BaseController {
             for (Ingredient item1 : ingredientList)
             {
                 if (item1.getIngredientName().equalsIgnoreCase(a)) {
-                    JOptionPane.showMessageDialog(null, "Nguyên liệu đã tồn tại");
+                    JOptionPane.showMessageDialog(null, "Ingredient is already existed");
                     return;
                 } else if (ingredientManagementView.getIngredientNameTextField().getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Chưa nhập tên nguyên liệu!");
+                    JOptionPane.showMessageDialog(null, "Ingredient name is required!");
                     return;
                 } else if (ingredientManagementView.getUnitTextField().getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "Chưa nhập đơn vị!");
+                    JOptionPane.showMessageDialog(null, "Unit is required!");
                     return;
                 }
             }
@@ -175,7 +175,7 @@ public class IngredientManagementController implements BaseController {
             
             ingredientService.insert(newIngredient);
             
-            JOptionPane.showMessageDialog(null, "Thành Công");
+            JOptionPane.showMessageDialog(null, "Success");
             ingredientManagementView.getIngredientNameTextField().setText("");
             ingredientManagementView.getUnitTextField().setText("");
             setFormState(false);

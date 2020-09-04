@@ -257,21 +257,21 @@ public class ExpenseStatisticView extends javax.swing.JPanel {
 
         jSplitPane2.setDividerLocation(200);
 
-        jLabel1.setText("Bộ lọc");
+        jLabel1.setText("Filter");
 
-        jLabel2.setText("Ngày bắt đầu:");
+        jLabel2.setText("From:");
 
-        jLabel3.setText("Ngày kết thúc:");
+        jLabel3.setText("To:");
 
-        jLabel4.setText("Hiển thị theo:");
+        jLabel4.setText("Grouped By:");
 
         cbxPeriod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel5.setText("Khoàng thời gian:");
+        jLabel5.setText("Time Range:");
 
         cbxTimeRange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnFilter.setText("Lọc");
+        btnFilter.setText("Filter");
 
         lblErrFilter.setForeground(new java.awt.Color(255, 0, 0));
         lblErrFilter.setText("jLabel6");
@@ -339,7 +339,7 @@ public class ExpenseStatisticView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "STT", "Thời gian", "Chi phí"
+                "No.", "Time", "Expense"
             }
         ) {
             Class[] types = new Class [] {
@@ -359,9 +359,9 @@ public class ExpenseStatisticView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblExpenseStatistic);
 
-        jLabel6.setText("Khoảng thời gian:");
+        jLabel6.setText("Time Range:");
 
-        jLabel8.setText("Tổng chi phí:");
+        jLabel8.setText("Total Expense:");
 
         lblTimeRange.setText("jLabel7");
 

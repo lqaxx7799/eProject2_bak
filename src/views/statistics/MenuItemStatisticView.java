@@ -255,17 +255,17 @@ public class MenuItemStatisticView extends javax.swing.JPanel {
 
         jSplitPane2.setDividerLocation(200);
 
-        jLabel1.setText("Bộ lọc");
+        jLabel1.setText("Fitler");
 
-        jLabel2.setText("Ngày bắt đầu:");
+        jLabel2.setText("From:");
 
-        jLabel3.setText("Ngày kết thúc:");
+        jLabel3.setText("To:");
 
-        jLabel5.setText("Khoàng thời gian:");
+        jLabel5.setText("Time Range:");
 
         cbxTimeRange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnFilter.setText("Lọc");
+        btnFilter.setText("Filter");
 
         lblErrFilter.setForeground(new java.awt.Color(255, 0, 0));
         lblErrFilter.setText("jLabel6");
@@ -290,7 +290,7 @@ public class MenuItemStatisticView extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(lblErrFilter))
-                        .addGap(0, 99, Short.MAX_VALUE)))
+                        .addGap(0, 120, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -327,7 +327,7 @@ public class MenuItemStatisticView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "STT", "Món", "Danh mục", "Số lượng", "Doanh thu"
+                "No.", "Menu Item", "Category", "Quantity", "Revenue"
             }
         ) {
             Class[] types = new Class [] {
@@ -347,9 +347,9 @@ public class MenuItemStatisticView extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblMenuItemStatistic);
 
-        jLabel6.setText("Khoảng thời gian:");
+        jLabel6.setText("Time Range:");
 
-        jLabel8.setText("Tổng số lượng:");
+        jLabel8.setText("Total Quantity:");
 
         lblTimeRange.setText("jLabel7");
 
@@ -357,7 +357,7 @@ public class MenuItemStatisticView extends javax.swing.JPanel {
 
         lblTotalRevenue.setText("jLabel7");
 
-        jLabel9.setText("Tổng doanh thu:");
+        jLabel9.setText("Total Revenue:");
 
         javax.swing.GroupLayout pnlInformationLayout = new javax.swing.GroupLayout(pnlInformation);
         pnlInformation.setLayout(pnlInformationLayout);

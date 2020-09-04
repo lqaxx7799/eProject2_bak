@@ -37,11 +37,11 @@ public class ManagementController implements BaseController {
         menuCategoryManagementController = new MenuCategoryManagementController();
         menuItemManagementController = new MenuItemManagementController();
 
-        managementView.getTabManagement().addTab("Tài khoản", accountManagementController.getPanel());
-        managementView.getTabManagement().addTab("Nguyên Liệu", ingredientManagementController.getPanel());
-        managementView.getTabManagement().addTab("Bàn", tableManagementController.getPanel());
-        managementView.getTabManagement().addTab("Món ăn", menuItemManagementController.getPanel());
-        managementView.getTabManagement().addTab("Danh mục món", menuCategoryManagementController.getPanel());
+        managementView.getTabManagement().addTab("Account", accountManagementController.getPanel());
+        managementView.getTabManagement().addTab("Ingredient", ingredientManagementController.getPanel());
+        managementView.getTabManagement().addTab("Table", tableManagementController.getPanel());
+        managementView.getTabManagement().addTab("Menu Item", menuItemManagementController.getPanel());
+        managementView.getTabManagement().addTab("Menu Category", menuCategoryManagementController.getPanel());
 
         managementView.getTabManagement().addChangeListener(e -> changeTab(e));
     }

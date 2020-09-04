@@ -32,9 +32,9 @@ public class StatisticController implements BaseController {
         expenseStatisticController = new ExpenseStatisticController();
         menuItemStatisticController = new MenuItemStatisticController();
 
-        statisticView.getTabStatistic().add("Doanh thu", revenueStatisticController.getPanel());
-        statisticView.getTabStatistic().add("Chi phí", expenseStatisticController.getPanel());
-        statisticView.getTabStatistic().add("Món", menuItemStatisticController.getPanel());
+        statisticView.getTabStatistic().add("Revenue", revenueStatisticController.getPanel());
+        statisticView.getTabStatistic().add("Expense", expenseStatisticController.getPanel());
+        statisticView.getTabStatistic().add("Menu Item", menuItemStatisticController.getPanel());
 
         statisticView.getTabStatistic().addChangeListener(e -> changeTab(e));
     }

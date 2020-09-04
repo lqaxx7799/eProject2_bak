@@ -83,11 +83,11 @@ public class MenuItemStatisticController implements BaseController {
         menuItemStatisticView.getTblMenuItemStatistic().getColumnModel().getColumn(0).setMaxWidth(50);
 
         menuItemStatisticView.getCbxTimeRange().removeAllItems();
-        menuItemStatisticView.getCbxTimeRange().addItem("Hôm nay");
-        menuItemStatisticView.getCbxTimeRange().addItem("Hôm qua");
-        menuItemStatisticView.getCbxTimeRange().addItem("7 ngày qua");
-        menuItemStatisticView.getCbxTimeRange().addItem("Tháng này");
-        menuItemStatisticView.getCbxTimeRange().addItem("Tùy chọn");
+        menuItemStatisticView.getCbxTimeRange().addItem("Today");
+        menuItemStatisticView.getCbxTimeRange().addItem("Yesterday");
+        menuItemStatisticView.getCbxTimeRange().addItem("Last 7 days");
+        menuItemStatisticView.getCbxTimeRange().addItem("This month");
+        menuItemStatisticView.getCbxTimeRange().addItem("Custom");
 
         menuItemStatisticView.getLblErrFilter().setText("");
         menuItemStatisticView.getPnlInformation().setVisible(false);
@@ -126,7 +126,7 @@ public class MenuItemStatisticController implements BaseController {
 
         Date[] timeRange = CommonUltilities.generateTimeRange(timeRangeIndex, fromDateString, toDateString);
         if (timeRange == null) {
-            menuItemStatisticView.getLblErrFilter().setText("Ngày không hợp lệ");
+            menuItemStatisticView.getLblErrFilter().setText("Invalid date");
             return;
         }
         Date fromDate = timeRange[0], toDate = timeRange[1];
@@ -176,7 +176,7 @@ public class MenuItemStatisticController implements BaseController {
             mis.setMenuCategoryName(menuCategory.getCategoryName());
         }
 
-        String timeRangeString = String.format("Từ %s đến %s", dfTime.format(fromDate), dfTime.format(toDate));
+        String timeRangeString = String.format("From %s to %s", dfTime.format(fromDate), dfTime.format(toDate));
 
         DefaultTableModel revenueStatisticModel = (DefaultTableModel) menuItemStatisticView.getTblMenuItemStatistic().getModel();
         for (int i = revenueStatisticModel.getRowCount() - 1; i >= 0; i--) {
@@ -200,7 +200,7 @@ public class MenuItemStatisticController implements BaseController {
 
         CategoryDataset ds = createDataset(tableData);
 
-        JFreeChart chart = ChartFactory.createBarChart("Thống kê theo món", "Món", "Doanh thu", ds, PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart chart = ChartFactory.createBarChart("Menu Item Statistic", "Item", "Revenue", ds, PlotOrientation.VERTICAL, true, true, false);
         ChartPanel cp = new ChartPanel(chart);
         menuItemStatisticView.getjSplitPane1().setBottomComponent(cp);
         menuItemStatisticView.getjSplitPane1().setDividerLocation(250);
@@ -209,7 +209,7 @@ public class MenuItemStatisticController implements BaseController {
     private CategoryDataset createDataset(ArrayList<MenuItemStatistic> data) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (MenuItemStatistic mis : data) {
-            dataset.addValue(mis.getRevenue(), "Doanh thu", mis.getMenuItemName());
+            dataset.addValue(mis.getRevenue(), "Revenue", mis.getMenuItemName());
         }
         return dataset;
     }

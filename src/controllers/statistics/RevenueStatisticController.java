@@ -71,17 +71,17 @@ public class RevenueStatisticController implements BaseController {
         revenueStatisticView.getTblRevenueStatistic().getColumnModel().getColumn(0).setMaxWidth(50);
 
         revenueStatisticView.getCbxTimeRange().removeAllItems();
-        revenueStatisticView.getCbxTimeRange().addItem("Hôm nay");
-        revenueStatisticView.getCbxTimeRange().addItem("Hôm qua");
-        revenueStatisticView.getCbxTimeRange().addItem("7 ngày qua");
-        revenueStatisticView.getCbxTimeRange().addItem("Tháng này");
-        revenueStatisticView.getCbxTimeRange().addItem("Tùy chọn");
+        revenueStatisticView.getCbxTimeRange().addItem("Today");
+        revenueStatisticView.getCbxTimeRange().addItem("Yesterdat");
+        revenueStatisticView.getCbxTimeRange().addItem("Last 7 days");
+        revenueStatisticView.getCbxTimeRange().addItem("This month");
+        revenueStatisticView.getCbxTimeRange().addItem("Custom");
 
         revenueStatisticView.getCbxPeriod().removeAllItems();
-        revenueStatisticView.getCbxPeriod().addItem("Giờ");
-        revenueStatisticView.getCbxPeriod().addItem("Ngày");
-        revenueStatisticView.getCbxPeriod().addItem("Tuần");
-        revenueStatisticView.getCbxPeriod().addItem("Tháng");
+        revenueStatisticView.getCbxPeriod().addItem("Hour");
+        revenueStatisticView.getCbxPeriod().addItem("Day");
+        revenueStatisticView.getCbxPeriod().addItem("Week");
+        revenueStatisticView.getCbxPeriod().addItem("Month");
 
         revenueStatisticView.getLblErrFilter().setText("");
         revenueStatisticView.getPnlInformation().setVisible(false);
@@ -124,7 +124,7 @@ public class RevenueStatisticController implements BaseController {
 
         Date[] timeRange = CommonUltilities.generateTimeRange(timeRangeIndex, fromDateString, toDateString);
         if (timeRange == null) {
-            revenueStatisticView.getLblErrFilter().setText("Ngày không hợp lệ");
+            revenueStatisticView.getLblErrFilter().setText("Invalid date");
             return;
         }
         Date fromDate = timeRange[0], toDate = timeRange[1];
@@ -137,7 +137,7 @@ public class RevenueStatisticController implements BaseController {
             }
         }
 
-        String timeRangeString = String.format("Từ %s đến %s", dfTime.format(fromDate), dfTime.format(toDate));
+        String timeRangeString = String.format("From %s to %s", dfTime.format(fromDate), dfTime.format(toDate));
         double totalRevenue = 0;
         int totalReceipt = 0;
 
@@ -204,7 +204,7 @@ public class RevenueStatisticController implements BaseController {
 
         CategoryDataset ds = createDataset(tableData);
 
-        JFreeChart chart = ChartFactory.createBarChart("Thống kê doanh thu", "Thời gian", "Doanh thu", ds, PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart chart = ChartFactory.createBarChart("Revenue Statistic", "Time", "Revenue", ds, PlotOrientation.VERTICAL, true, true, false);
         CategoryPlot plot = chart.getCategoryPlot();
         CategoryAxis axis = plot.getDomainAxis();
         axis.setCategoryLabelPositions(CategoryLabelPositions.createDownRotationLabelPositions(Math.PI / 4.0));
@@ -216,7 +216,7 @@ public class RevenueStatisticController implements BaseController {
     private CategoryDataset createDataset(ArrayList<RevenueStatistic> data) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (RevenueStatistic rs : data) {
-            dataset.addValue(rs.getRevenue(), "Doanh thu", rs.getTime());
+            dataset.addValue(rs.getRevenue(), "Revenue", rs.getTime());
         }
         return dataset;
     }

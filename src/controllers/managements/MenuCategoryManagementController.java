@@ -58,7 +58,7 @@ public class MenuCategoryManagementController implements BaseController {
     public void btnFixHandler() {
         int selectedRow = menuCategoryManagementView.getjTable1().getSelectedRow();
         if (selectedRow == - 1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
         int menuCategoryId = (int) menuCategoryManagementView.getjTable1().getValueAt(selectedRow, 0);
@@ -72,7 +72,7 @@ public class MenuCategoryManagementController implements BaseController {
     }
 
     public void btnRemoveHandler() {
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn xóa danh mục này", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you really want to delete this category", "Confirmation", JOptionPane.YES_NO_OPTION);
         if (dialogResult == JOptionPane.YES_OPTION) {
             int selectedRow = menuCategoryManagementView.getjTable1().getSelectedRow();
             if (selectedRow == - 1) {
@@ -83,7 +83,7 @@ public class MenuCategoryManagementController implements BaseController {
             MenuCategory menuCategory = menuCategoryService.getById(menuCategoryId);
             menuCategory.setAvailable(false);
             menuCategoryService.update(menuCategory);
-            JOptionPane.showMessageDialog(null, "Xóa thành công");
+            JOptionPane.showMessageDialog(null, "Success");
             loadTable();
         }
     }
@@ -94,13 +94,13 @@ public class MenuCategoryManagementController implements BaseController {
         String categoryName = menuCategoryManagementView.getTxtCategoryName().getText();
         boolean check = true;
         if (categoryName.equals("")) {
-            menuCategoryManagementView.getLblErrorName().setText("Chưa nhập tên");
+            menuCategoryManagementView.getLblErrorName().setText("Category name is required");
             check = false;
         } else if (actionName.equals("add")) {
             ArrayList<MenuCategory> menuCategorys = menuCategoryService.getAll();
             for (MenuCategory item : menuCategorys) {
                 if (item.getCategoryName().equalsIgnoreCase(categoryName) && item.isAvailable()) {
-                    menuCategoryManagementView.getLblErrorName().setText("Danh mục đã tồn tại");
+                    menuCategoryManagementView.getLblErrorName().setText("Category name is already existed");
                     check = false;
                     break;
                 } else if (item.getCategoryName().equals(categoryName) && item.isAvailable() == false) {
@@ -108,7 +108,7 @@ public class MenuCategoryManagementController implements BaseController {
                     item.setAvailable(true);
                     item.setCreatedTime(new Date());
                     menuCategoryService.update(item);
-                    JOptionPane.showMessageDialog(null, "Thêm thành công");
+                    JOptionPane.showMessageDialog(null, "Success");
                     loadTable();
                     resetForm();
                     resetErrorLabel();
@@ -126,7 +126,7 @@ public class MenuCategoryManagementController implements BaseController {
                 category.setAvailable(true);
                 category.setCreatedTime(new Date());
                 menuCategoryService.insert(category);
-                JOptionPane.showMessageDialog(null, "Thêm thành công");
+                JOptionPane.showMessageDialog(null, "Success");
                 loadTable();
                 resetForm();
                 setButtonState(true);
@@ -135,7 +135,7 @@ public class MenuCategoryManagementController implements BaseController {
                 MenuCategory category = menuCategoryService.getById(CurrentCategoryId);
                 category.setCategoryName(categoryName);
                 menuCategoryService.update(category);
-                JOptionPane.showMessageDialog(null, "Sửa thành công");
+                JOptionPane.showMessageDialog(null, "Success");
                 loadTable();
                 resetForm();
                 setButtonState(true);

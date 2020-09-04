@@ -72,17 +72,17 @@ public class ExpenseStatisticController implements BaseController {
         expenseStatisticView.getTblExpenseStatistic().getColumnModel().getColumn(0).setMaxWidth(50);
 
         expenseStatisticView.getCbxTimeRange().removeAllItems();
-        expenseStatisticView.getCbxTimeRange().addItem("Hôm nay");
-        expenseStatisticView.getCbxTimeRange().addItem("Hôm qua");
-        expenseStatisticView.getCbxTimeRange().addItem("7 ngày qua");
-        expenseStatisticView.getCbxTimeRange().addItem("Tháng này");
-        expenseStatisticView.getCbxTimeRange().addItem("Tùy chọn");
+        expenseStatisticView.getCbxTimeRange().addItem("Today");
+        expenseStatisticView.getCbxTimeRange().addItem("Yesterday");
+        expenseStatisticView.getCbxTimeRange().addItem("Last 7 days");
+        expenseStatisticView.getCbxTimeRange().addItem("This month");
+        expenseStatisticView.getCbxTimeRange().addItem("Custom");
 
         expenseStatisticView.getCbxPeriod().removeAllItems();
-        expenseStatisticView.getCbxPeriod().addItem("Giờ");
-        expenseStatisticView.getCbxPeriod().addItem("Ngày");
-        expenseStatisticView.getCbxPeriod().addItem("Tuần");
-        expenseStatisticView.getCbxPeriod().addItem("Tháng");
+        expenseStatisticView.getCbxPeriod().addItem("Hour");
+        expenseStatisticView.getCbxPeriod().addItem("Day");
+        expenseStatisticView.getCbxPeriod().addItem("Week");
+        expenseStatisticView.getCbxPeriod().addItem("Month");
 
         expenseStatisticView.getLblErrFilter().setText("");
         expenseStatisticView.getPnlInformation().setVisible(false);
@@ -122,7 +122,7 @@ public class ExpenseStatisticController implements BaseController {
 
         Date[] timeRange = CommonUltilities.generateTimeRange(timeRangeIndex, fromDateString, toDateString);
         if (timeRange == null) {
-            expenseStatisticView.getLblErrFilter().setText("Ngày không hợp lệ");
+            expenseStatisticView.getLblErrFilter().setText("Invalid date");
             return;
         }
         Date fromDate = timeRange[0], toDate = timeRange[1];
@@ -135,7 +135,7 @@ public class ExpenseStatisticController implements BaseController {
             }
         }
 
-        String timeRangeString = String.format("Từ %s đến %s", dfTime.format(fromDate), dfTime.format(toDate));
+        String timeRangeString = String.format("From %s to %s", dfTime.format(fromDate), dfTime.format(toDate));
         double totalExpense = 0;
 
         ArrayList<ExpenseStatistic> tableData = new ArrayList<>();
@@ -186,7 +186,7 @@ public class ExpenseStatisticController implements BaseController {
 
         CategoryDataset ds = createDataset(tableData);
 
-        JFreeChart chart = ChartFactory.createBarChart("Thống kê chi phí", "Thời gian", "Chi phí", ds, PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart chart = ChartFactory.createBarChart("Expense Statistic", "Time", "Expense", ds, PlotOrientation.VERTICAL, true, true, false);
         CategoryPlot plot = chart.getCategoryPlot();
         CategoryAxis axis = plot.getDomainAxis();
         axis.setCategoryLabelPositions(CategoryLabelPositions.createDownRotationLabelPositions(Math.PI / 4.0));
@@ -198,7 +198,7 @@ public class ExpenseStatisticController implements BaseController {
     private CategoryDataset createDataset(ArrayList<ExpenseStatistic> data) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         for (ExpenseStatistic es : data) {
-            dataset.addValue(es.getExpense(), "Doanh thu", es.getTime());
+            dataset.addValue(es.getExpense(), "Expense", es.getTime());
         }
         return dataset;
     }

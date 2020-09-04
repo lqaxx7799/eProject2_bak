@@ -50,7 +50,7 @@ public class TableManagementController implements BaseController {
         DefaultTableModel listModel = (DefaultTableModel) tableManagementView.getTableManagementTable().getModel();
         int rowSelected = tableManagementView.getTableManagementTable().getSelectedRow();
         if (rowSelected == -1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
         setButtonState(false);
@@ -66,18 +66,18 @@ public class TableManagementController implements BaseController {
         DefaultTableModel listModel = (DefaultTableModel) tableManagementView.getTableManagementTable().getModel();
         int rowSelected = tableManagementView.getTableManagementTable().getSelectedRow();
         if (rowSelected == -1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
         setButtonState(false);
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Xóa bàn này?", "Thông báo", dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you really want to delete this table?", "Confirmation", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             int id = (int) tableManagementView.getTableManagementTable().getValueAt(rowSelected, 0);
             Table table = tableService.getById(id);
             table.setAvailable(false);
             tableService.update(table);
-            JOptionPane.showMessageDialog(null, "Thành Công!");
+            JOptionPane.showMessageDialog(null, "Success!");
         }
         loadData();
         return;
@@ -97,7 +97,7 @@ public class TableManagementController implements BaseController {
             String tabelName = tableManagementView.getTableNameTextField().getText();
             for (Table table : tableList) {
                 if (tabelName.equalsIgnoreCase(table.getTableName())) {
-                    JOptionPane.showMessageDialog(null, "Tên bàn đã tồn tại");
+                    JOptionPane.showMessageDialog(null, "Table name is already existed");
                     return;
                 }
             }
@@ -106,11 +106,11 @@ public class TableManagementController implements BaseController {
             newTable.setOccupied(isOccupied);
             newTable.setAvailable(true);
             if (tabelName.equals("")) {
-                JOptionPane.showMessageDialog(null, "Chưa nhập tên bàn");
+                JOptionPane.showMessageDialog(null, "Table name is required");
                 return;
             }
             tableService.insert(newTable);
-            JOptionPane.showMessageDialog(null, "Thành Công");
+            JOptionPane.showMessageDialog(null, "Success");
             resetForm();
             setButtonState(true);
             loadData();
@@ -121,7 +121,7 @@ public class TableManagementController implements BaseController {
             int id = (int) tableManagementView.getTableManagementTable().getValueAt(rowSelected, 0);
             String tableNameTxt = tableManagementView.getTableNameTextField().getText();
             if (tableNameTxt.equals("")) {
-                JOptionPane.showMessageDialog(null, "Chưa nhập tên bàn");
+                JOptionPane.showMessageDialog(null, "Table name is required");
                 return;
             }
 //            for (Table table : tableList) {
@@ -135,7 +135,7 @@ public class TableManagementController implements BaseController {
             tbl.setOccupied(tableManagementView.getIsOccupiedRadioButton().isSelected());
             tbl.setAvailable(tableManagementView.getIsAvailableRadioButton().isSelected());
             tableService.update(tbl);
-            JOptionPane.showMessageDialog(null, "Thành Công");
+            JOptionPane.showMessageDialog(null, "Success");
             resetForm();
             setButtonState(true);
             setFormState(false);

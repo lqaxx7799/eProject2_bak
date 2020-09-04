@@ -133,7 +133,7 @@ public class AccountManagementController implements BaseController {
         int selectedRow = accountManagementView.getTblAccount().getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
 
@@ -179,16 +179,16 @@ public class AccountManagementController implements BaseController {
 
         if (email.equals("")) {
             isValid = false;
-            accountManagementView.getLblErrEmail().setText("Nhập email");
+            accountManagementView.getLblErrEmail().setText("Email is required");
         } else if (!CommonUltilities.checkEmailFormat(email)) {
             isValid = false;
-            accountManagementView.getLblErrEmail().setText("Nhập email đúng định dạng");
+            accountManagementView.getLblErrEmail().setText("Email is not in correct format");
         } else if (actionType.equals("add")) {
             ArrayList<Account> accounts = accountService.getAll();
             for (Account a : accounts) {
                 if (a.getEmail().equals(email)) {
                     isValid = false;
-                    accountManagementView.getLblErrEmail().setText("Nhập email đã tồn tại");
+                    accountManagementView.getLblErrEmail().setText("Email is already used");
                     break;
                 }
             }
@@ -196,20 +196,20 @@ public class AccountManagementController implements BaseController {
 
         if (userName.equals("")) {
             isValid = false;
-            accountManagementView.getLblErrUserName().setText("Nhập tên người dùng");
+            accountManagementView.getLblErrUserName().setText("User name is required");
         }
 
         Date dateOfBirth = null;
         if (!dateOfBirthString.equals("")) {
             if (!CommonUltilities.checkDateFormat(dateOfBirthString)) {
                 isValid = false;
-                accountManagementView.getLblErrDateOfBirth().setText("Nhập ngày sinh đúng định dạng");
+                accountManagementView.getLblErrDateOfBirth().setText("Date of birth is not in correct format");
             } else {
                 try {
                     dateOfBirth = df.parse(dateOfBirthString);
                     if (dateOfBirth.after(new Date())) {
                         isValid = false;
-                        accountManagementView.getLblErrDateOfBirth().setText("Ngày sinh phải trước hiện tại");
+                        accountManagementView.getLblErrDateOfBirth().setText("Date of birth must be in the past");
                     }
                 } catch (ParseException ex) {
                     Logger.getLogger(AccountManagementController.class.getName()).log(Level.SEVERE, null, ex);
@@ -226,7 +226,7 @@ public class AccountManagementController implements BaseController {
         }
         if (roleId == 0) {
             isValid = false;
-            accountManagementView.getLblErrRole().setText("Chức vụ không tồn tại");
+            accountManagementView.getLblErrRole().setText("Role does not exist");
         }
 
         if (isValid) {
@@ -273,7 +273,7 @@ public class AccountManagementController implements BaseController {
         int selectedRow = accountManagementView.getTblAccount().getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Chọn một hàng trước");
+            JOptionPane.showMessageDialog(null, "Select a row first");
             return;
         }
         

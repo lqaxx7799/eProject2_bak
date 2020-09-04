@@ -36,7 +36,7 @@ public class LogOutController implements BaseController{
     
     private void logOutHandler(){
         int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn thực sự muốn đăng xuất?", "Thông báo", dialogButton);
+        int dialogResult = JOptionPane.showConfirmDialog(null, "Do you really want to log out?", "Alert", dialogButton);
         if (dialogResult == JOptionPane.YES_OPTION) {
             App.currentAccount = null;
             homeController.getFrame().setVisible(false);

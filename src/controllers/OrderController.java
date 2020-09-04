@@ -86,20 +86,20 @@ public class OrderController implements BaseController{
 
     private void BtnAddHandler(){
         if(CurrentReceiptId==0){
-            JOptionPane.showMessageDialog(null, "Bàn này chưa có hóa đơn nào");
+            JOptionPane.showMessageDialog(null, "This table does not have any receipt");
             return;
         }
         String regex = "^[0-9]{1,}$";
         int selectedIdex = orderView.getCbMenuItem().getSelectedIndex();
         if (orderView.getTxtQuantity().getText().equals("")){
-            JOptionPane.showMessageDialog(null, "Chưa nhập số lượng");
+            JOptionPane.showMessageDialog(null, "Quantity cannot be empty");
             return;
         }else if(orderView.getTxtQuantity().getText().matches(regex) == false){
-            JOptionPane.showMessageDialog(null, "Chỉ được nhập số lượng là số");
+            JOptionPane.showMessageDialog(null, "Quantity must be a number");
             return;
         }
         if(selectedIdex == - 1){
-            JOptionPane.showMessageDialog(null, "Chưa chọn món");
+            JOptionPane.showMessageDialog(null, "Menu Item must be selected");
             return;
         }
         int quantity = Integer.parseInt(orderView.getTxtQuantity().getText());
@@ -140,32 +140,32 @@ public class OrderController implements BaseController{
     
     private void BtnPayHandlder() {
         if(CurrentReceiptId == 0){
-            JOptionPane.showMessageDialog(null,"Bàn này hiện không có hóa đơn nào" , "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"This table does not have any receipt" , "Alert", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
         else{
-            int dialogResult = JOptionPane.showConfirmDialog(null, "Bạn có muốn thanh toán "+tableService.getById(CurrentTableId).getTableName(),
-                    "Xác nhận", JOptionPane.YES_NO_OPTION);
+            int dialogResult = JOptionPane.showConfirmDialog(null, "Do you want to check out "+tableService.getById(CurrentTableId).getTableName(),
+                    "Confirm", JOptionPane.YES_NO_OPTION);
             if(dialogResult == JOptionPane.YES_OPTION){
                 DefaultTableModel model = (DefaultTableModel) orderView.getjTable2().getModel();
                 for (int i = model.getRowCount() - 1; i >= 0; i--) {
                     totalPaymentPrice += (Double)orderView.getjTable2().getValueAt(i, 3);
                 }
-                try {
-                    FileOutputStream outputStream = new FileOutputStream("E:\\Work\\CNPM\\cnpm_11_restaurant\\Bill.txt");
-                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-16");
-                    BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
-                    bufferedWriter.write("Hoá đơn số: "+CurrentReceiptId);
-                    for(int i= 0;i <  model.getRowCount() ; i++){
-                        bufferedWriter.newLine();
-                        bufferedWriter.write(orderView.getjTable2().getValueAt(i,0).toString()+" "+orderView.getjTable2().getValueAt(i,1).toString()+" "+orderView.getjTable2().getValueAt(i,2).toString()+" "+orderView.getjTable2().getValueAt(i,3).toString());
-                    }
-                    bufferedWriter.newLine();
-                    bufferedWriter.write("Tổng: "+totalPaymentPrice);
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    FileOutputStream outputStream = new FileOutputStream("E:\\Work\\CNPM\\cnpm_11_restaurant\\Bill.txt");
+//                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "UTF-16");
+//                    BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+//                    bufferedWriter.write("Receipt: "+CurrentReceiptId);
+//                    for(int i= 0;i <  model.getRowCount() ; i++){
+//                        bufferedWriter.newLine();
+//                        bufferedWriter.write(orderView.getjTable2().getValueAt(i,0).toString()+" "+orderView.getjTable2().getValueAt(i,1).toString()+" "+orderView.getjTable2().getValueAt(i,2).toString()+" "+orderView.getjTable2().getValueAt(i,3).toString());
+//                    }
+//                    bufferedWriter.newLine();
+//                    bufferedWriter.write("Total: "+totalPaymentPrice);
+//                    bufferedWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 Receipt rc_temp = receiptService.getById(CurrentReceiptId);
                 rc_temp.setPaid(true);
                 rc_temp.setPaidTime(new Date());
@@ -173,14 +173,14 @@ public class OrderController implements BaseController{
                 Table table = tableService.getById(CurrentTableId);
                 table.setOccupied(false);
                 tableService.update(table);
-                JOptionPane.showMessageDialog(null, "Thanh toán thành công");
+                JOptionPane.showMessageDialog(null, "Check out successfully");
                 showBill(CurrentTableId);
                 loadTable();
                 totalPaymentPrice = 0;
             }
         }
         CurrentReceiptId = billListService.getReceiptIdByTableId(CurrentTableId);
-        orderView.getLblReceiptId().setText("Số " + CurrentReceiptId);
+        orderView.getLblReceiptId().setText("No. " + CurrentReceiptId);
     }
     
     private void loadTable(){
@@ -206,7 +206,7 @@ public class OrderController implements BaseController{
         
     public void btnAddReceiptHandler(){
         if(CurrentReceiptId >0){
-            JOptionPane.showMessageDialog(null, "Bàn này đã có hóa đơn");
+            JOptionPane.showMessageDialog(null, "This table already had a receipt");
             return;
         }
         else{
@@ -217,14 +217,14 @@ public class OrderController implements BaseController{
             rc.setTableId(CurrentTableId);
             rc.setAccountId(App.currentAccount.getId());
             receiptService.insert(rc);
-            JOptionPane.showMessageDialog(null, "Thêm hóa đơn thành công");
+            JOptionPane.showMessageDialog(null, "Add receipt successfully");
             Table table = tableService.getById(CurrentTableId);
             table.setOccupied(true);
             tableService.update(table);
             loadTable();
         }
         CurrentReceiptId = billListService.getReceiptIdByTableId(CurrentTableId);
-        orderView.getLblReceiptId().setText("Số " + CurrentReceiptId);
+        orderView.getLblReceiptId().setText("No. " + CurrentReceiptId);
     }
     
     public void resetForm(){
