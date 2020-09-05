@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -204,7 +205,11 @@ public class CommonUltilities {
     }
 
     public static String formatCurrency(double number) {
-        return String.valueOf(number);
+        if(number == 0 ){
+            return "0đ";
+        }
+        DecimalFormat formatter = new DecimalFormat("#,###");
+        return String.format("%sđ", formatter.format(number));
     }
 
     public static int getLastDayOfMonth(int month, int year) {

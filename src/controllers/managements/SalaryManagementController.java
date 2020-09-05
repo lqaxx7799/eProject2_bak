@@ -62,7 +62,7 @@ public class SalaryManagementController {
             String toDate = salaryInformation.getToDate() == null ? "" : df.format(salaryInformation.getToDate());
 
             Object[] rowData = new Object[]{
-                salaryInformation.getSalary(),
+                CommonUltilities.formatCurrency(salaryInformation.getSalary()),
                 fromDate,
                 toDate
             };
@@ -70,10 +70,10 @@ public class SalaryManagementController {
             salaryModel.addRow(rowData);
 
             if (salaryInformation.getToDate() == null) {
-                salaryManagementView.getTxtSalary().setText(String.valueOf(salaryInformation.getSalary()));
+                salaryManagementView.getTxtSalary().setText(String.format("%.0f", salaryInformation.getSalary()));
             }
         }
-        
+
         if (salaryInformations.isEmpty()) {
             salaryManagementView.getTxtSalary().setText("0");
         }

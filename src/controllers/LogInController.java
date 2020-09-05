@@ -59,7 +59,7 @@ public class LogInController {
         for (Account account : accounts) {
             if (account.getEmail().equals(email) && account.getPassword().equals(CommonUltilities.generateSHA1(password))) {
                 if (!account.isWorking()) {
-                    logInView.getLblMessage().setText("Tài khoản không có quyền đăng nhập");
+                    logInView.getLblMessage().setText("This account is not available");
                     return;
                 }
                 logInFrame.setVisible(false);
@@ -70,6 +70,6 @@ public class LogInController {
             }
         }
 
-        logInView.getLblMessage().setText("Sai email hoặc mật khẩu");
+        logInView.getLblMessage().setText("Wrong email or password");
     }
 }

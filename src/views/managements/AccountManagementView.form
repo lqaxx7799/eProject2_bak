@@ -192,32 +192,35 @@
                                       <Component id="txtEmail" min="-2" pref="148" max="-2" attributes="0"/>
                                       <Component id="txtUserName" min="-2" pref="148" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblErrUserName" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblErrEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblErrEmail" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblErrUserName" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="chbIsWorking" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
+                                      <Component id="chbIsWorking" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="txtAddress" min="-2" pref="148" max="-2" attributes="0"/>
                                               <Component id="txtDateOfBirth" min="-2" pref="148" max="-2" attributes="0"/>
                                               <Component id="cbxGender" min="-2" pref="148" max="-2" attributes="0"/>
                                               <Component id="cbxRole" alignment="1" min="-2" pref="148" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lblErrAddress" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblErrAddress" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblErrGender" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblErrDateOfBirth" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblErrRole" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
+                          <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -227,12 +230,7 @@
                               <Component id="lblGender" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblErrIsWorking" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblErrRole" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblErrGender" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblErrDateOfBirth" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblErrIsWorking" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -245,14 +243,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblErrEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblErrEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>

@@ -114,9 +114,9 @@ public class MonthlySalaryManagementController implements BaseController {
         }
 
         for (Account account : accounts) {
-//            if (account.getRoleId() == 4) {
-//                break;
-//            }
+            if (account.getRoleId() == 4) {
+                continue;
+            }
             ArrayList<Timekeeping> timekeepings = timekeepingService.getByAccountId(account.getId());
             double countActualTimekeeping = 0;
             long totalMinuteFee = 0;
@@ -190,7 +190,7 @@ public class MonthlySalaryManagementController implements BaseController {
                     account.getEmail(),
                     account.getUserName(),
                     countActualTimekeeping,
-                    salaryInformation.getSalary(),
+                    CommonUltilities.formatCurrency(salaryInformation.getSalary()),
                     CommonUltilities.formatCurrency(actualSalary)
                 };
                 monthSalaryModel.addRow(rowData);

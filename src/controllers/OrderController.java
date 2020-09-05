@@ -72,7 +72,7 @@ public class OrderController implements BaseController{
             CurrentTableId = tableId;
             CurrentReceiptId = billListService.getReceiptIdByTableId(tableId);
             orderView.getLabelTableName().setText(tableService.getById(CurrentTableId).getTableName());
-            orderView.getLblReceiptId().setText("Số " + CurrentReceiptId);
+            orderView.getLblReceiptId().setText("No. " + CurrentReceiptId);
             DefaultTableModel tableModel= (DefaultTableModel)orderView.getjTable2().getModel();
             for (int i = tableModel.getRowCount() - 1; i >= 0; i--) {
                 tableModel.removeRow(i);
