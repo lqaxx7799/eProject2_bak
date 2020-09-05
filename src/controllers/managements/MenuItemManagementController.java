@@ -71,7 +71,10 @@ public class MenuItemManagementController implements BaseController {
         MenuItem menuItem = menuItemService.getById(menuitemId);
         menuItemManagementView.getTxtItemName().setText(menuItem.getItemName());
         menuItemManagementView.getTxtPrice().setText(String.valueOf(menuItem.getPrice()));
-        menuItemManagementView.getTxtCategoryId().setText(String.valueOf(menuItem.getMenuCategoryId()));
+        MenuCategory menuCategory = menuCategoryService.getById(menuItem.getMenuCategoryId());
+        menuItemManagementView.getCbxMenuCategory().setSelectedItem(menuCategory.getId()+"~"+menuCategory.getCategoryName());
+//        menuItemManagementView.getTxtCategoryId().setText(String.valueOf(menuItem.getMenuCategoryId()));
+        
 
         setButtonState(false);
         setFormState(true);
@@ -105,15 +108,15 @@ public class MenuItemManagementController implements BaseController {
         if (menuItemManagementView.getTxtPrice().getText().matches(regex) == true || menuItemManagementView.getTxtPrice().getText().matches(regex1) == true) {
             price = Double.parseDouble(menuItemManagementView.getTxtPrice().getText());
         }
-        if (menuItemManagementView.getTxtCategoryId().getText().matches(regex1) == true) {
-            categoryId = Integer.parseInt(menuItemManagementView.getTxtCategoryId().getText());
-        }
+//        if (menuItemManagementView.getTxtCategoryId().getText().matches(regex1) == true) {
+            categoryId = Integer.parseInt(((String)menuItemManagementView.getCbxMenuCategory().getSelectedItem()).split("~")[0]);
+//        }
         String itemName = menuItemManagementView.getTxtItemName().getText();
         boolean check = true;
         if (itemName.equals("")) {
             menuItemManagementView.getLblErrorName().setText("Item name is required");
             check = false;
-        } else if (actionName.equals("add")){
+        } else if (actionName.equals("add")) {
             ArrayList<MenuItem> menuItems = menuItemService.getAll();
             for (MenuItem item : menuItems) {
                 if (item.getItemName().equalsIgnoreCase(itemName) && item.isAvailable()) {
@@ -145,25 +148,25 @@ public class MenuItemManagementController implements BaseController {
             check = false;
         }
         int count = 0;
-        if (menuItemManagementView.getTxtCategoryId().getText().equals("")) {
-            menuItemManagementView.getLblErrorCategoryId().setText("Category id is requried");
-            check = false;
-        } else if (menuItemManagementView.getTxtCategoryId().getText().matches(regex1) == false) {
-            menuItemManagementView.getLblErrorCategoryId().setText("Category id must be a number");
-            check = false;
-        } else {
-            ArrayList<MenuCategory> menuCategorys = menuCategoryService.getAll();
-            for (MenuCategory item : menuCategorys) {
-                if (item.getId() == categoryId) {
-                    count = 1;
-                    break;
-                }
-            }
-            if (count == 0) {
-                menuItemManagementView.getLblErrorCategoryId().setText("Category does not exist");
-                check = false;
-            }
-        }
+//        if (menuItemManagementView.getTxtCategoryId().getText().equals("")) {
+//            menuItemManagementView.getLblErrorCategoryId().setText("Category id is requried");
+//            check = false;
+//        } else if (menuItemManagementView.getTxtCategoryId().getText().matches(regex1) == false) {
+//            menuItemManagementView.getLblErrorCategoryId().setText("Category id must be a number");
+//            check = false;
+//        } else {
+//            ArrayList<MenuCategory> menuCategorys = menuCategoryService.getAll();
+//            for (MenuCategory item : menuCategorys) {
+//                if (item.getId() == categoryId) {
+//                    count = 1;
+//                    break;
+//                }
+//            }
+//            if (count == 0) {
+//                menuItemManagementView.getLblErrorCategoryId().setText("Category does not exist");
+//                check = false;
+//            }
+//        }
 
         if (check) {
             if (actionName.equals("add")) {
@@ -212,13 +215,13 @@ public class MenuItemManagementController implements BaseController {
     }
 
     public void setFormState(boolean state) {
-        menuItemManagementView.getTxtCategoryId().setEnabled(state);
+        menuItemManagementView.getCbxMenuCategory().setEnabled(state);
         menuItemManagementView.getTxtItemName().setEnabled(state);
         menuItemManagementView.getTxtPrice().setEnabled(state);
     }
 
     public void resetForm() {
-        menuItemManagementView.getTxtCategoryId().setText("");
+        menuItemManagementView.getCbxMenuCategory().setSelectedIndex(0);
         menuItemManagementView.getTxtItemName().setText("");
         menuItemManagementView.getTxtPrice().setText("");
     }
@@ -236,6 +239,10 @@ public class MenuItemManagementController implements BaseController {
 
     @Override
     public void loadData() {
+        menuItemManagementView.getCbxMenuCategory().removeAllItems();
+        for (MenuCategory menuCategory : menuCategoryService.getAll()) {
+            menuItemManagementView.getCbxMenuCategory().addItem(menuCategory.getId() + "~" + menuCategory.getCategoryName());
+        }
         loadTable();
         resetForm();
         resetErrorLabel();

@@ -163,7 +163,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="OK"/>
+        <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnViewSalary">

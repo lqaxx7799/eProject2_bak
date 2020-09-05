@@ -149,10 +149,13 @@ public class MonthlySalaryManagementController implements BaseController {
                             outTime.setTime(timekeeping.getOutTime());
                             long outDiff = expectedOutTime.getTime().getTime() - outTime.getTime().getTime();
                             minuteOutEarly = outDiff < 0 ? 0 : outDiff / (60 * 1000);
+                            countActualTimekeeping += 1;
+                        } else {
+                            countActualTimekeeping += 0.5;
                         }
                         totalMinuteFee += minuteInLate + minuteOutEarly;
-
                     }
+
                 }
             }
             ArrayList<SalaryInformation> salaryInformations = salaryInformationService.getByAccountId(account.getId());

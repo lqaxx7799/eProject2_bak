@@ -333,7 +333,7 @@ public class AccountManagementView extends javax.swing.JPanel {
 
         btnCancel.setText("Cancel");
 
-        btnSubmit.setText("OK");
+        btnSubmit.setText("Submit");
 
         btnViewSalary.setText("View Salary");
 
